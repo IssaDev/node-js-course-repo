@@ -53,7 +53,15 @@ app.get('/bad', (req,res) => {
     errocode:'404',
     errorMessage: 'Bad request'
   });
-})
+});
+
+app.get('/projects', (req,res) => {
+  //res.send('<h1>Hello, Express!</h1>');
+  res.render('projects.hbs',{
+    welcomeMessage: 'Welcome User',
+        pageTitle : 'Portfolio Page'
+  })
+});
 
 app.listen(port, () => {
   console.log('Server running on port ' + port);
